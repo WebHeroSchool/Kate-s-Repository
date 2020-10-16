@@ -1,15 +1,15 @@
-#logo{
+.header__logo{
   font-family: "Righteous", cursive;
 }
-.menu{
+.header__link{
   font-family: "Monda", sans-serif;
 }
-.description{
+.main__description{
   font-family: "Monda", sans-serif;
 }
-.title{
+.main__title{
   font-family: "Abril Fatface", cursive;
 }
-.button{
+.main__button{
   font-family: "Noto Sans KR", sans-serif;
 }
