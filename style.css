@@ -3,6 +3,7 @@
 }
 .menu__item{
   font-family: "Monda", sans-serif;
+  padding: 0 13px;
 }
 .main-content__subtitle{
   font-family: "Monda", sans-serif;
@@ -12,4 +13,30 @@
 }
 .main-content__button{
   font-family: "Noto Sans KR", sans-serif;
+}
+.wrapper{
+  width: 80%;
+  margin: auto;
+}
+body{
+  margin: 0;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.header,.main-section{
+}
+.logo,.menu{
+  display: inline-block;
+}
+.logo{
+  padding: 40px 0;
+}
+.menu{
+  display: flex;
+  align-items: center;
+}
+.menu__item:last-child{
+  padding-right: 0;
 }
