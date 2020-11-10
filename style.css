@@ -1,3 +1,23 @@
+.wrapper{
+  width: 80%;
+  margin: auto;
+}
+body{
+  margin: 0;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.header,.main-section{
+}
+.logo,.menu{
+  display: inline-block;
+}
+.menu{
+  display: flex;
+  align-items: center;
+}
 .logo{
   position: relative;
   padding: 40px 0;
@@ -27,8 +47,48 @@
   background: #0056EC;
 }
 .menu__item{
-  font-family: "Monda", sans-serif;
-  padding: 0 13px;
+  position: relative;
+  margin-right: 26px;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 29px;
+  font-weight: 500;
+  font-style: normal;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity .5s;
+}
+.menu__item:after{
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #0056EC;
+  opacity: 0;
+  transition: opacity .5s, width .5s;;
+}
+.menu__item:hover:after{
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #0056EC;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.menu__item:hover{
+  opacity: 0.5;
+}
+.menu__item:hover:after, .menu__item_active:after{
+  opacity: 1;
+  width: 100%;
+}
+.menu__item:last-child{
+  margin-right: 0;
 }
 .main-content__subtitle{
   font-family: "Monda", sans-serif;
@@ -38,27 +98,4 @@
 }
 .main-content__button{
   font-family: "Noto Sans KR", sans-serif;
-}
-.wrapper{
-  width: 80%;
-  margin: auto;
-}
-body{
-  margin: 0;
-}
-.header{
-  display: flex;
-  justify-content: space-between;
-}
-.header,.main-section{
-}
-.logo,.menu{
-  display: inline-block;
-}
-.menu{
-  display: flex;
-  align-items: center;
-}
-.menu__item:last-child{
-  padding-right: 0;
 }
