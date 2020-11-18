@@ -8,8 +8,8 @@ body{
 .header{
   display: flex;
   justify-content: space-between;
-}
-.header,.main-section{
+  margin-bottom: 132px; /*изменено относительно инструкции в уроке, т.к. если не добавить это, то положение текста и картинки не попадает в Pixel Perfect.
+  Это расстояние от верха страницы до картинки минус высота контента header, итого 242-110=132*/
 }
 .logo,.menu{
   display: inline-block;
@@ -90,12 +90,55 @@ body{
 .menu__item:last-child{
   margin-right: 0;
 }
-.main-content__subtitle{
-  font-family: "Monda", sans-serif;
+.main{
+  padding: 0 63% 250px 0;
+  background: top right no-repeat url(img/frame.svg);
 }
-.main-content__title{
-  font-family: "Abril Fatface", cursive;
+.main__title{
+  font-family: 'pt_serif';
+  font-size: 66px;
+  line-height: 87px;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 36px 0; /*Здесь должно было быть 40px, но высота текста не сходилась.
+  Подзаголовок почему-то был немного ниже, чем в макете.
+  Проверила, оказалось, что в макете высота блока с заголовком 255px, а на деле получилось 259px, т.е. на 4px больше, чем нужно.
+  Тогда нужен margin 40px-4px=36px
+  Теперь всё на вид как в макете, но всё равно не могу понять, почему у меня блок получился выше,
+  у меня ведь такой же размер шрифта и line-height? */
+  padding-top: 76px;  /*изменено относительно инструкции в уроке, т.к. если не добавить это, то положение текста и картинки не попадает в Pixel Perfect.
+  Это расстояние от верха страницы до заголовка минус высота контента header минус padding блока header, итого 318-110-132=76*/
 }
-.main-content__button{
-  font-family: "Noto Sans KR", sans-serif;
+.main__subtitle{
+  font-family: 'Roboto';
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  font-style: normal;
+  padding-right: 90px; /*добавлено, т.к. иначе деление текста на две строки не соответствует дизайну. Важно ли вообще соблюдать такие вещи,
+  как разбивка на строки?
+  Кажется, этот паддинг может помешать при адаптивной верстке (я мало о ней знаю, это просто предположение?)
+  Наверно, это нужно будет удалить, и пусть делится как есть*/
+  margin: 0 0 59px 0; /*59, а не 41, т.к. 41 - это расстояние от подзаголовка до края кнопки,
+  а мы здесь указываем расстояние от подзаголовка до текста, а это 59 по макету для экрана 1920*/
+}
+.main__button{
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  font-style: normal;
+  color: #FFFFFF;
+  padding: 18px 40px 24px 21px; /*кажется, паддинги в дизайне были рассчитаны так, как там, потому что положение текста рассчитывалось
+  от положения кнопки, а чтобы оно было как на картинке без указания width & height кнопки, нужно придумать размер паддингов на глаз?*/
+  background: #0056EC;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity .5s;
+}
+.main__button:hover{
+  opacity: .5;
+}
+.main__title-text_highlight{
+  background: #ECF3FF;
 }
