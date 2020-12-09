@@ -1,5 +1,5 @@
 @media (min-width: 280px) and (max-width: 768px) {
-  /* от телефонов до айпадов, + потом нужно сделать меню-бургер*/
+  /*от маленьких телефонов до айпадов*/
   .wrapper{
     width: 87%;
     margin: auto;
@@ -10,11 +10,11 @@
   .header{
     display: flex;
     justify-content: space-between;
+    height: 59px;
+    margin-bottom: 28px;
   }
   .menu{
     display: none;
-    align-items: center;
-    margin-right: 13px;
   }
   .logo{
     visibility: hidden;
@@ -49,52 +49,11 @@
     visibility: visible;
     background: #0056EC;
   }
-  .menu__item{
-    position: relative;
-    margin-right: 26px;
-    font-family: Roboto;
-    font-size: 18px;
-    line-height: 29px;
-    font-weight: 500;
-    font-style: normal;
-    color: #000000;
-    text-decoration: none;
-    transition: opacity .5s;
-  }
-  .menu__item:after{
-    position: absolute;
-    display: block;
-    content: "";
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: #0056EC;
-    opacity: 0;
-    transition: opacity .5s, width .5s;;
-  }
-  .menu__item:hover:after{
-    position: absolute;
-    display: block;
-    content: "";
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #0056EC;
-    opacity: 0;
-    transition: opacity .5s;
-  }
-  .menu__item:hover{
-    opacity: 0.5;
-  }
-  .menu__item:hover:after, .menu__item_active:after{
-    opacity: 1;
-    width: 100%;
-  }
-  .menu__item:last-child{
-    margin-right: 0;
-  }
   .main{
-    padding: 299px 0 0 0;
+    padding: 80% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: top center no-repeat url(img/frame.svg);
     background-size: 86%;
   }
@@ -105,7 +64,7 @@
     font-weight: 700;
     font-style: normal;
     text-align: center;
-    margin: 0 0 32px 0;
+    margin: 0 0 33px 0;
   }
   .main__subtitle{
     font-family: 'Roboto';
@@ -114,7 +73,8 @@
     font-weight: 500;
     font-style: normal;
     text-align: center;
-    margin: 0 0 39px 0;
+    width: 75%;
+    margin: 0 0 25px 0;
   }
   .main__button{
     font-family: 'Roboto';
@@ -137,6 +97,93 @@
     background: #ECF3FF;
   }
 }
+#menu__toggle {
+  opacity: 0;
+}
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 32px;
+  right: 24px;
+  width: 25px;
+  height: 17px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #0056EC;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed; /*фиксирует элемент в рамках области просмотра страницы, расстояние до края которой указано в свойствах top, left, right, bottom*/
+  visibility: hidden; /*но будет появляться при активации чекбокса*/
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 186px 0 0 0;
+  list-style: none;
+  text-align: center;
+  background-color: #FFFFFF; /*цвет всй открывающейся коробочки, ЗА списком*/
+}
+.menu__point {/*отдельные элементы меню, которое будет выкатываться*/
+  display: block;
+  padding: 0 0 24px 0;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+}
+/*работа над открытием и закрытием выпадающего меню*/
+#menu__toggle:checked ~ .menu__btn > span {/*когда обнаруживается, что чекбокс чекнут, все спан-ы в кнопке меню поворачиваются в нужную сторону,
+  образуя крестик, а коробка с меню становится видимой */
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .5s;
+}
+.menu__box {
+  transition-duration: .5s;
+}
+.menu__point {
+  transition-duration: .5s;
+  transition: opacity .5s;
+}
 @media (min-width: 1024px) {
 /*тут всё по макету 1024 для экранов от 1024 до 1366*/
 .wrapper{
@@ -150,6 +197,9 @@ body{
   display: flex;
   justify-content: space-between;
   margin-bottom: 83px; /*Это расстояние от верха страницы до картинки минус высота контента header*/
+}
+.hamburger-menu, .menu__box{
+  display: none;
 }
 .logo,.menu{
   display: inline-block;
@@ -287,6 +337,9 @@ body{
   justify-content: space-between;
   margin-bottom: 83px;
   /*Это расстояние от верха страницы до картинки минус высота контента header, итого 195-112=83*/
+}
+.hamburger-menu, .menu__box{
+  display: none;
 }
 .logo,.menu{
   display: inline-block;
@@ -426,6 +479,9 @@ body{
   justify-content: space-between;
   margin-bottom: 132px; /*Это расстояние от верха страницы до картинки минус высота контента header, итого 242-110=132*/
 }
+.hamburger-menu, .menu__box{
+  display: none;
+}
 .logo,.menu{
   display: inline-block;
 }
@@ -536,7 +592,8 @@ body{
   font-weight: 500;
   font-style: normal;
   color: #FFFFFF;
-  padding: 18px 40px 24px 21px; 
+  padding: 18px 40px 24px 21px;
+  margin: 0 auto;
   background: #0056EC;
   text-decoration: none;
   border-radius: 4px;
