@@ -149,7 +149,7 @@ body {
   }
 
   .menu__item {
-    font: normal 500 18px/29px Roboto;
+    font: normal 500 18px/29px "Roboto", sans-serif;
   }
 
   .main {
@@ -192,7 +192,7 @@ body {
   }
 
   .menu__item {
-    font: normal 500 14px/16px Roboto;
+    font: normal 500 14px/16px "Roboto", sans-serif;
   }
 
   .main {
@@ -236,7 +236,7 @@ body {
   }
 
   .menu__item {
-    font: normal 500 14px/17px Roboto;
+    font: normal 500 14px/17px "Roboto", sans-serif;
   }
 
   .main {
