@@ -46,6 +46,7 @@ body {
   top: 56%;
   background: #c8dbfb;
 }
+
 .logo__circle_color_dark-blue {
   background: #0056ec;
 }
@@ -95,6 +96,7 @@ body {
 .menu__item:last-child {
   margin-right: 0;
 }
+
 .main {
   background: top right no-repeat url(img/frame.svg);
 }
@@ -108,6 +110,7 @@ body {
   border-radius: 4px;
   transition: opacity .5s;
 }
+
 .main__button:hover {
   animation: 0.1s tremor ease-out 6;
 }
@@ -123,6 +126,7 @@ body {
     left: 1px;
   }
 }
+
 .main__title-text_highlight {
   background: #ecf3ff;
 }
@@ -131,12 +135,15 @@ body {
   .wrapper {
     width: 80%;
   }
+
   .header {
     margin-bottom: 132px;
   }
+
   .menu {
     margin-right: 13px;
   }
+
   .logo {
     font: normal 700 24px/31px "pt_serif";
   }
@@ -144,6 +151,7 @@ body {
   .menu__item {
     font: normal 500 18px/29px Roboto;
   }
+
   .main {
     padding: 0 63% 250px 0;
   }
@@ -170,15 +178,19 @@ body {
   .wrapper {
     width: 68%;
   }
+
   .header {
     margin-bottom: 83px;
   }
+
   .menu {
     margin-right: 5px;
   }
+
   .logo {
     font: normal 700 24px/32px "pt_serif";
   }
+
   .menu__item {
     font: normal 500 14px/16px Roboto;
   }
@@ -210,15 +222,19 @@ body {
   .wrapper {
     width: 91%;
   }
+
   .header {
     margin-bottom: 83px;
   }
+
   .menu {
     margin: 0;
   }
+
   .logo {
     font: normal 700 24px/32px "pt_serif";
   }
+
   .menu__item {
     font: normal 500 14px/17px Roboto;
   }
@@ -255,9 +271,11 @@ body {
     height: 59px;
     margin-bottom: 28px;
   }
+
   .menu {
     display: none;
   }
+
   .hamburger-menu {
     display: block;
   }
@@ -267,12 +285,15 @@ body {
     display: inline-block;
     font: normal 700 24px/31px "pt_serif";
   }
+
   .logo__circle {
     visibility: visible;
   }
+
   .logo__circle_color_blue {
     visibility: visible;
   }
+
   .logo__circle_color_dark-blue {
     visibility: visible;
   }
@@ -285,6 +306,7 @@ body {
     background: top center no-repeat url(img/frame.svg);
     background-size: 86%;
   }
+
   .main__title {
     font: normal 700 30px/40px 'pt_serif';
     text-align: center;
@@ -305,6 +327,7 @@ body {
     text-align: center;
     padding: 14px 25px 13px 16px;
   }
+  
   #menu__toggle {
     opacity: 0;
   }
@@ -329,7 +352,7 @@ body {
     width: 100%;
     height: 3px;
     background-color: #0056ec;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .menu__btn > span::before {
@@ -357,6 +380,7 @@ body {
     text-align: center;
     background-color: #fff;
     z-index: 1;
+    transition: .5s;
   }
 
   .menu__point {
@@ -365,6 +389,7 @@ body {
     color: #000;
     font: normal 500 30px/36px 'Roboto';
     text-decoration: none;
+    transition: .5s;
   }
 
   #menu__toggle:checked ~ .menu__btn > span {
@@ -385,11 +410,5 @@ body {
     visibility: visible;
     opacity: 1;
     left: 0;
-  }
-  .menu__box {
-    transition: .5s;
-  }
-  .menu__point {
-    transition: .5s;
   }
 }
