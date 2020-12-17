@@ -9,10 +9,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .hamburger-menu,
 .menu__box {
   display: none;
 }
+
 .logo,
 .menu {
   display: inline-block;
@@ -65,7 +67,7 @@ body {
   height: 3px;
   background: #0056ec;
   opacity: 0;
-  transition: opacity .5s, width .5s;
+  transition: opacity 0.5s, width 0.5s;
 }
 
 .menu__item:hover::after {
@@ -79,6 +81,7 @@ body {
   opacity: 0;
   transition: opacity .5s;
 }
+
 .menu__item:hover {
   opacity: .5;
 }
@@ -88,6 +91,7 @@ body {
   opacity: 1;
   width: 100%;
 }
+
 .menu__item:last-child {
   margin-right: 0;
 }
@@ -105,14 +109,17 @@ body {
   transition: opacity .5s;
 }
 .main__button:hover {
-  animation: .1s tremor ease-out 6;
+  animation: 0.1s tremor ease-out 6;
 }
 
 @keyframes tremor {
-  0%, 25% {
+  0%,
+  25% {
     left: -1px;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     left: 1px;
   }
 }
@@ -133,6 +140,7 @@ body {
   .logo {
     font: normal 700 24px/31px "pt_serif";
   }
+
   .menu__item {
     font: normal 500 18px/29px Roboto;
   }
@@ -147,7 +155,7 @@ body {
   }
 
   .main__subtitle {
-    font: normal 400 22px/26px 'Roboto';
+    font: normal 400 22px/26px 'Roboto_regular';
     padding-right: 90px;
     margin: 0 0 59px 0;
   }
@@ -158,7 +166,7 @@ body {
   }
 }
 
-@media (max-width: 1919px){
+@media (max-width: 1919px) {
   .wrapper {
     width: 68%;
   }
@@ -198,7 +206,7 @@ body {
   }
 }
 
-@media (max-width: 1365px){
+@media (max-width: 1365px) {
   .wrapper {
     width: 91%;
   }
@@ -238,7 +246,7 @@ body {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .wrapper {
     width: 87%;
   }
@@ -321,6 +329,7 @@ body {
     width: 100%;
     height: 3px;
     background-color: #0056ec;
+    transition: .5s;
   }
 
   .menu__btn > span::before {
@@ -333,7 +342,7 @@ body {
     top: 8px;
   }
 
-  .menu__box{
+  .menu__box {
     display: block;
     position: fixed;
     visibility: hidden;
@@ -357,6 +366,7 @@ body {
     font: normal 500 30px/36px 'Roboto';
     text-decoration: none;
   }
+
   #menu__toggle:checked ~ .menu__btn > span {
     transform: rotate(45deg);
   }
@@ -375,11 +385,6 @@ body {
     visibility: visible;
     opacity: 1;
     left: 0;
-  }
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    transition: .5s;
   }
   .menu__box {
     transition: .5s;
